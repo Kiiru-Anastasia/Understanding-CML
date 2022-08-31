@@ -34,9 +34,10 @@ train_score = regr.score(X_train, y_train) * 100
 # Report test set score
 test_score = regr.score(X_test, y_test) * 100
 
-df_new = df.head()
-df_new.savefig('df_new.png', dpi = 300)                    
-plt.close(df_new.png)
+plot = df.head().plot()
+fig = plt.get_figure()   
+fig.savefig('dfHead.png')               
+plt.close()
 
 
 # Write scores to a file
