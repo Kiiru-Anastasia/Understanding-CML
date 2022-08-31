@@ -1,5 +1,6 @@
 name: understanding-CML
 on: [push]
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -27,6 +28,9 @@ jobs:
           # Post reports as comments in GitHub PRs
           echo "## Model Metrics" >> report.md
           cat metrics.txt >> report.md
+
+          echo "##Sample Data" >> report.md
+          cat dfHead.csv >> report.md
           
           echo "## Data Visualizations" >> report.md
           cml publish feature_importance.png --md >> report.md
