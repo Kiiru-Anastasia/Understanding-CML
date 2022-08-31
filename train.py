@@ -34,10 +34,14 @@ train_score = regr.score(X_train, y_train) * 100
 # Report test set score
 test_score = regr.score(X_test, y_test) * 100
 
+df.head().to_csv ('dfHead.csv')
+
 # Write scores to a file
 with open("metrics.txt", 'w') as outfile:
         outfile.write("Training variance explained: %2.1f%%\n" % train_score)
         outfile.write("Test variance explained: %2.1f%%\n" % test_score)
+
+
 
 
 ##########################################
