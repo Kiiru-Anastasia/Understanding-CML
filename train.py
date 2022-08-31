@@ -34,7 +34,9 @@ train_score = regr.score(X_train, y_train) * 100
 # Report test set score
 test_score = regr.score(X_test, y_test) * 100
 
-df.head().to_csv ('dfHead.csv')
+df_new = df['fixed acidity', 'volatile acidity'].head()
+df_new.savefig('df_new.png', dpi = 300)                    
+plt.close(df_new.png)
 
 # Write scores to a file
 with open("metrics.txt", 'w') as outfile:
