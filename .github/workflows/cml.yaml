@@ -30,7 +30,7 @@ jobs:
           cat metrics.txt >> report.md
 
           echo "## Sample Data" >> report.md
-          cat wine_quality.csv >> report.md
+          cml publish df_new.png --md >> report.md
           
           echo "## Data Visualizations" >> report.md
           cml publish feature_importance.png --md >> report.md
