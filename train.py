@@ -16,6 +16,11 @@ seed = 42
 
 # Load in the data
 df = pd.read_csv("wine_quality.csv")
+dfTop = df.head()
+
+#write dataFrame head to markdown file
+with open("dfTop.md", 'w') as mdFile:
+        dfTop.to_markdown(buf=mdFile, tablefmt="grid")
 
 # Split into train and test sections
 y = df.pop("quality")
@@ -33,12 +38,6 @@ regr.fit(X_train, y_train)
 train_score = regr.score(X_train, y_train) * 100
 # Report test set score
 test_score = regr.score(X_test, y_test) * 100
-
-plot = df.head().plot()
-fig = plt.get_figure()   
-fig.savefig('dfHead.png')               
-plt.close()
-
 
 # Write scores to a file
 with open("metrics.txt", 'w') as outfile:
