@@ -18,9 +18,8 @@ seed = 42
 df = pd.read_csv("wine_quality.csv")
 dfTop = df.head()
 
-#write dataFrame head to markdown file
-with open("dfTop.md", 'w') as mdFile:
-        dfTop.to_markdown(buf=mdFile, tablefmt="grid")
+#write dataFrame head txt file
+np.savetxt('dfTop.txt', dfTop.values, fmt = '%d')
 
 # Split into train and test sections
 y = df.pop("quality")
